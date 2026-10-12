@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday Saloni 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#ffe3ee;--bg2:#ffd0e0;--ink:#5a1635;--soft:#a3426b;--card:#fffafcdd;--rose:#ff4f8b;--gold:#ffb703;--cream:#fff3e0;--choc:#6b3a2a;--pink:#ff8fb8;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#2a0f1e;--bg2:#3d1429;--ink:#ffe3ee;--soft:#ffb3cf;--card:#4a1a30dd}}
+:root[data-theme="dark"]{--bg1:#2a0f1e;--bg2:#3d1429;--ink:#ffe3ee;--soft:#ffb3cf;--card:#4a1a30dd}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(160deg,var(--bg1),var(--bg2));color:var(--ink);font-family:'Baloo 2','Segoe UI',system-ui,sans-serif;text-align:center;overflow-x:hidden}
+.bg{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.bg span{position:absolute;bottom:-40px;animation:up linear infinite;opacity:.7}
+@keyframes up{to{transform:translateY(-110vh) rotate(30deg)}}
+main{position:relative;z-index:1;max-width:520px;margin:0 auto;padding:28px 18px 60px}
+h1{font-family:'Pacifico','Brush Script MT',cursive;font-weight:400;font-size:clamp(34px,9vw,52px);margin:8px 0;color:var(--rose);line-height:1.2}
+p{margin:6px 0;color:var(--soft);font-size:18px}
+.step{display:none;animation:pop .6s ease}
+.step.on{display:block}
+@keyframes pop{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+button{font:inherit;font-weight:700;font-size:19px;color:#fff;background:linear-gradient(135deg,#ff4f8b,#ff8a5c);border:0;border-radius:999px;padding:14px 30px;margin-top:18px;cursor:pointer;box-shadow:0 8px 20px #ff4f8b55;transition:transform .15s}
+button:hover{transform:scale(1.06)}button:active{transform:scale(.96)}
+button:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.gift{font-size:96px;display:inline-block;animation:wob 1.4s infinite;cursor:pointer}
+@keyframes wob{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg) scale(1.08)}}
+/* cake */
+.cakewrap{position:relative;width:260px;height:250px;margin:20px auto 0}
+.half{position:absolute;inset:0;transition:transform .9s cubic-bezier(.3,1.4,.5,1)}
+.half.l{clip-path:inset(0 50% 0 0)}.half.r{clip-path:inset(0 0 0 50%)}
+.cut .half.l{transform:translateX(-26px) rotate(-5deg)}
+.cut .half.r{transform:translateX(26px) rotate(5deg)}
+.flame{transform-origin:50% 100%;animation:fl .35s infinite alternate}
+@keyframes fl{to{transform:scale(1.15,.88) rotate(4deg)}}
+.out .flame{display:none}
+.knife{position:absolute;left:50%;top:-70px;font-size:60px;transform:translateX(-50%) rotate(180deg);opacity:0;transition:all .7s ease;z-index:3}
+.cut .knife{opacity:1;top:90px}
+.heart{position:absolute;font-size:22px;animation:hv 1.2s ease-out forwards;pointer-events:none}
+@keyframes hv{to{transform:translateY(-90px);opacity:0}}
+/* wishes */
+.card{background:var(--card);backdrop-filter:blur(6px);border:2px dashed var(--pink);border-radius:26px;padding:26px 22px;margin-top:18px;min-height:190px;display:flex;flex-direction:column;justify-content:center;box-shadow:0 10px 30px #ff4f8b33}
+.card .em{font-size:44px}
+.card .tx{font-size:20px;line-height:1.5;color:var(--ink)}
+.dots{margin-top:14px;letter-spacing:6px;color:var(--rose)}
+.sign{font-family:'Pacifico',cursive;font-size:clamp(26px,7vw,36px);color:var(--rose);margin-top:14px;line-height:1.3}
+.final .big{font-size:72px}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:5;width:100%;height:100%}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 6px}
+.bl{background:none;box-shadow:none;padding:6px;margin:0;font-size:64px;line-height:1;animation:fl2 2.4s ease-in-out infinite}
+.bl:nth-child(2n){animation-delay:-.8s}.bl:nth-child(3n){animation-delay:-1.5s}
+.bl:nth-child(1){filter:hue-rotate(0)}.bl:nth-child(2){filter:hue-rotate(60deg)}.bl:nth-child(3){filter:hue-rotate(150deg)}.bl:nth-child(4){filter:hue-rotate(200deg)}.bl:nth-child(5){filter:hue-rotate(260deg)}.bl:nth-child(6){filter:hue-rotate(320deg)}
+@keyframes fl2{50%{transform:translateY(-12px) rotate(4deg)}}
+.bl.pop{animation:none;transform:scale(1.6);opacity:0;pointer-events:none;transition:all .25s}
+.coupon{background:var(--card);border:2px dashed var(--gold);border-radius:18px;padding:16px;min-height:78px;font-size:19px;color:var(--ink);display:flex;align-items:center;justify-content:center;animation:pop .4s}
+.meter{margin-top:16px}.bar{height:20px;border-radius:99px;background:#ffffff88;border:2px solid var(--pink);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff4f8b,#ffb703);transition:width .1s}
+.mv{font-weight:700;font-size:22px;color:var(--rose);margin-top:4px}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
+</style>
+</head>
+<body>
+<div class="bg" id="bg"></div>
+<canvas id="cv"></canvas>
+<main>
+ <section class="step on" id="s0">
+  <p style="margin-top:30px">Ek khaas dost ke liye, ek khaas surprise 💌</p>
+  <h1>Saloni... 🌸</h1>
+  <div class="gift" id="gift" role="button" tabindex="0" aria-label="Gift kholo">🎁</div>
+  <p>Ye gift tumhare liye hai.<br>Khol ke dekho na! ✨</p>
+  <button id="b0">Gift kholo 🎀</button>
+ </section>
+
+ <section class="step" id="s1">
+  <h1>Happy Birthday<br>Saloni! 🎉</h1>
+  <p id="hint">Pehle candles phoonk ke bujhao 🕯️</p>
+  <div class="cakewrap" id="cake">
+   <div class="half l" id="cl"></div><div class="half r" id="cr"></div>
+   <div class="knife">🔪</div>
+  </div>
+  <button id="b1">🕯️ Phoonk maaro 💨</button>
+ </section>
+
+ <section class="step" id="s4">
+  <h1>Balloon phodo! 🎈</h1>
+  <p>Har balloon ke andar ek gift coupon hai 🎫</p>
+  <div class="grid" id="grid"></div>
+  <div class="coupon" id="coupon">Balloon pe tap karo 👆</div>
+  <button id="b4" style="display:none">Ab wishes padho 💌</button>
+ </section>
+
+ <section class="step" id="s2">
+  <h1>Tumhare liye 💖</h1>
+  <p>Dil se likhe hue kuch alfaaz</p>
+  <div class="card" id="card"></div>
+  <div class="dots" id="dots"></div>
+  <button id="b2">Agla wish 💌</button>
+ </section>
+
+ <section class="step final" id="s3">
+  <div class="big">🎂🎈🎁</div>
+  <h1>Happy Birthday,<br>Saloni! 💕</h1>
+  <p>Tu hamesha aise hi muskurati rahe,<br>chamakti rahe, aur meri life mein bani rahe. 🌷</p>
+  <div class="meter"><div>Saloni ka Specialness Meter 📊</div><div class="bar"><i id="fill"></i></div><div class="mv" id="mv">0%</div></div>
+  <div class="card" style="min-height:0">
+   <div class="tx">Tu sirf meri dost nahi, meri life ka sabse best part hai. 🤍<br>Aaj ka din tere naam, aur tere har sapne ke naam! 🌟</div>
+   <div class="sign">With love ❤️<br>from Pankaj Kumar</div>
+  </div>
+  <button id="b3">Phir se manao 🎊</button>
+ </section>
+</main>
+
+<script>
+const $=id=>document.getElementById(id);
+const cakeSVG=`<svg viewBox="0 0 260 250" width="260" height="250">
+<ellipse cx="130" cy="236" rx="118" ry="11" fill="#e8b4c8"/>
+<rect x="20" y="170" width="220" height="62" rx="14" fill="#ff8fb8"/>
+<path d="M20 186q18 18 36 0t36 0 36 0 36 0 36 0 36 0v-16H20z" fill="#fff"/>
+<rect x="52" y="112" width="156" height="58" rx="12" fill="#ffb3cf"/>
+<path d="M52 126q13 15 26 0t26 0 26 0 26 0 26 0v-14H52z" fill="#fff"/>
+<rect x="84" y="62" width="92" height="50" rx="11" fill="#ffd1e3"/>
+<path d="M84 76q11 13 23 0t23 0 23 0 23 0v-14H84z" fill="#fff"/>
+<g fill="#e63b7a"><circle cx="40" cy="206" r="6"/><circle cx="90" cy="214" r="6"/><circle cx="130" cy="206" r="6"/><circle cx="170" cy="214" r="6"/><circle cx="220" cy="206" r="6"/><circle cx="76" cy="148" r="5"/><circle cx="130" cy="150" r="5"/><circle cx="184" cy="148" r="5"/></g>
+<g fill="#ffb703"><rect x="104" y="30" width="7" height="32" rx="3"/><rect x="127" y="30" width="7" height="32" rx="3"/><rect x="150" y="30" width="7" height="32" rx="3"/></g>
+<g fill="#ff7b00"><path class="flame" d="M107.5 12c7 8 7 15 0 18-7-3-7-10 0-18z"/><path class="flame" d="M130.5 12c7 8 7 15 0 18-7-3-7-10 0-18z"/><path class="flame" d="M153.5 12c7 8 7 15 0 18-7-3-7-10 0-18z"/></g>
+<g fill="#ffe066"><circle cx="107.5" cy="24" r="3"/><circle cx="130.5" cy="24" r="3"/><circle cx="153.5" cy="24" r="3"/></g>
+<text x="130" y="100" text-anchor="middle" font-size="15" font-weight="700" fill="#c2185b" font-family="Pacifico,cursive">Saloni</text>
+</svg>`;
+$('cl').innerHTML=cakeSVG;$('cr').innerHTML=cakeSVG;
+
+// floating emojis
+const E=['💖','🎈','🌸','✨','🎀','🦋','💕','🎉','🌷'];
+for(let i=0;i<18;i++){const s=document.createElement('span');s.textContent=E[i%E.length];
+s.style.left=Math.random()*100+'%';s.style.fontSize=(16+Math.random()*22)+'px';
+s.style.animationDuration=(9+Math.random()*10)+'s';s.style.animationDelay=(-Math.random()*14)+'s';$('bg').appendChild(s);}
+
+// confetti
+const cv=$('cv'),cx=cv.getContext('2d');let P=[],run=false;
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener('resize',size);
+function boom(n=160){const C=['#ff4f8b','#ffb703','#ff8fb8','#8ecae6','#b5179e','#fff'];
+for(let i=0;i<n;i++)P.push({x:innerWidth/2,y:innerHeight*.55,vx:(Math.random()-.5)*16,vy:-Math.random()*16-4,r:Math.random()*7+4,c:C[i%C.length],a:Math.random()*6,l:1});
+if(!run){run=true;tick()}}
+function tick(){cx.clearRect(0,0,cv.width,cv.height);
+P.forEach(p=>{p.vy+=.35;p.x+=p.vx;p.y+=p.vy;p.a+=.2;p.l-=.006;cx.save();cx.globalAlpha=Math.max(p.l,0);cx.translate(p.x,p.y);cx.rotate(p.a);cx.fillStyle=p.c;cx.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);cx.restore()});
+P=P.filter(p=>p.l>0&&p.y<cv.height+20);
+if(P.length)requestAnimationFrame(tick);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}}
+
+function show(n){document.querySelectorAll('.step').forEach(s=>s.classList.remove('on'));$('s'+n).classList.add('on');scrollTo(0,0)}
+
+// step 0
+const open=()=>{boom(80);show(1)};
+$('b0').onclick=open;$('gift').onclick=open;
+$('gift').onkeydown=e=>{if(e.key==='Enter'||e.key===' ')open()};
+
+// step 1: blow, then cut
+let stage=0;
+function hearts(){for(let i=0;i<8;i++){const h=document.createElement('div');h.className='heart';h.textContent=['💖','✨','💕'][i%3];
+h.style.left=(30+Math.random()*200)+'px';h.style.top=(40+Math.random()*80)+'px';$('cake').appendChild(h);setTimeout(()=>h.remove(),1300)}}
+$('b1').onclick=()=>{
+ if(stage===0){$('cake').classList.add('out');$('hint').textContent='Wish maang li na? 🤫 Ab cake kaato! 🎂';$('b1').textContent='🔪 Cake kaato';stage=1;hearts();}
+ else if(stage===1){$('cake').classList.add('cut');$('hint').textContent='Yayyy! Cake cut ho gaya! 🥳';$('b1').textContent='Wishes dekho 💌';stage=2;boom(220);playHB();}
+ else{show(4);initBalloons();}
+};
+$('cake').onclick=()=>{if(stage<2)$('b1').click()};
+
+// step 2: wishes
+const W=[
+['🌟','Saloni, aaj sirf tera birthday nahi hai, un sabki lottery lagi hai jinhe tu mili hai. Aur mera number sabse upar aata hai. 😌'],
+['😄','Teri hasi aisi hai ki bad mood bhi sharma ke bhaag jaata hai. Tu meri life ka free therapy session hai, aur sabse best wala! 🤭'],
+['🥹','Meri sabse ajeeb baatein aur sabse kharab din, tune kabhi judge nahi kiya. Aisi dost kismat walon ko milti hai, aur main wo kismat wala hoon. 💞'],
+['🦋','Dua hai: tere sapne itne bade ho, ki unhe poora karne mein tujhe bhi maza aaye. Jahan jaye wahan khushiyan teri raah dekh rahi ho. 🌈'],
+['🍰','Dua ye bhi hai ki tere paas itna pyaar ho jitna cake pe cream hai, aur itni khushi jitni teri chai mein cheeni... aur bill hamesha mera. 😂☕'],
+['💖','Duniya tujhe ek saal aur badi kar rahi hai, par mere liye tu wahi pagal, pyaari Saloni hai. Bas aise hi rehna. Happy Birthday meri bestie! 🎂']
+];
+let i=0;
+function render(){const [e,t]=W[i];
+ $('card').innerHTML=`<div class="em">${e}</div><div class="tx"></div>`;
+ const el=$('card').querySelector('.tx');let k=0;clearInterval(render.t);
+ render.t=setInterval(()=>{el.textContent=t.slice(0,++k);if(k>=t.length)clearInterval(render.t)},28);
+ $('dots').textContent=W.map((_,j)=>j<=i?'💗':'🤍').join('');
+ $('b2').textContent=i===W.length-1?'Last surprise 🎁':'Agla wish 💌';}
+$('b2').onclick=()=>{if(i<W.length-1){i++;render()}else{clearInterval(render.t);show(3);boom(260);setTimeout(()=>boom(160),700);meter()}};
+// sound
+let ac;const AC=()=>{try{return ac||(ac=new (window.AudioContext||window.webkitAudioContext)())}catch(e){return null}};
+function tone(f,t,d,type='triangle',v=.18){const a=AC();if(!a)return;const o=a.createOscillator(),g=a.createGain();o.type=type;o.frequency.value=f;o.connect(g);g.connect(a.destination);g.gain.setValueAtTime(v,a.currentTime+t);g.gain.exponentialRampToValueAtTime(.001,a.currentTime+t+d);o.start(a.currentTime+t);o.stop(a.currentTime+t+d+.05)}
+function playHB(){const n=[[262,.75],[262,.25],[294,1],[262,1],[349,1],[330,2],[262,.75],[262,.25],[294,1],[262,1],[392,1],[349,2],[262,.75],[262,.25],[523,1],[440,1],[349,1],[330,1],[294,1],[466,.75],[466,.25],[440,1],[349,1],[392,1],[349,2]];let t=0;n.forEach(([f,b])=>{tone(f,t,b*.4);t+=b*.4})}
+// balloons
+const CP=['☕ 1 Free Chai, jab bolo tab, bina bahane ke','🥟 1 Gol Gappe Party, pet bhar ke, meri taraf se','🌙 Raat 2 baje tak baatein, no questions asked','😜 Tera saara gussa maaf, sirf aaj ke liye','🤗 1 Jaadu ki Jhappi, kahin bhi, kabhi bhi','💯 Mera hamesha saath, lifetime validity, no expiry'];
+let popped=0;
+function initBalloons(){popped=0;$('b4').style.display='none';$('coupon').textContent='Balloon pe tap karo 👆';const g=$('grid');g.innerHTML='';
+CP.forEach((c,k)=>{const b=document.createElement('button');b.className='bl';b.textContent='🎈';b.setAttribute('aria-label','Balloon phodo');
+b.onclick=()=>{b.classList.add('pop');tone(700+k*90,0,.12,'square',.12);tone(1100,.05,.1,'square',.08);boom(40);$('coupon').textContent='🎫 '+c;
+if(++popped===CP.length)$('b4').style.display='inline-block'};g.appendChild(b)})}
+$('b4').onclick=()=>{show(2);render()};
+// meter
+function meter(){let v=0;const f=$('fill'),m=$('mv');clearInterval(meter.t);meter.t=setInterval(()=>{v+=v<100?2:v<1000?37:999;f.style.width=Math.min(v,100)+'%';
+if(v>=9999){m.textContent='∞% 🤯 Meter toot gaya! Itni special hai tu!';clearInterval(meter.t)}else m.textContent=v+'%'},70)}
+$('b3').onclick=()=>{i=0;stage=0;$('cake').classList.remove('out','cut');$('hint').textContent='Pehle candles phoonk ke bujhao 🕯️';$('b1').textContent='🕯️ Phoonk maaro 💨';show(1)};
+</script>
+</body>
+</html>
