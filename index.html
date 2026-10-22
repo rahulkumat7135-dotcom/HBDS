@@ -95,6 +95,7 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:5;width:100%;height:10
 .mc.up{background:#fff}
 #jf textarea{width:100%;border-radius:14px;border:2px solid var(--pink);padding:12px;font:inherit;font-size:17px;margin-top:10px;background:#fffafc;color:#5a1635;resize:vertical}
 .lnk{display:inline-block;margin-top:10px;font-weight:700;color:#fff;background:#25d366;border-radius:999px;padding:12px 24px;text-decoration:none}
+.shy{text-align:center}.shy p{margin:0 0 8px;font-size:20px;line-height:1.6}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
 </style>
 </head>
@@ -238,19 +239,20 @@ canvas{position:fixed;inset:0;pointer-events:none;z-index:5;width:100%;height:10
   <button id="b9">Last surprise 🎁</button>
  </section>
 
+ <section class="step" id="s14">
+  <h1>Kuch Shayariyan 📜</h1>
+  <p>Dil se, sirf tumhare liye ✍️</p>
+  <div class="paper shy" id="shc"></div>
+  <div class="dots" id="shd"></div>
+  <button id="b14">Agli shayari 📜</button>
+ </section>
+
  <section class="step final" id="s3">
   <img class="avatar" id="av" alt="Saloni">
   <div class="big">🎂🎈🎁</div>
   <h1>Happy Birthday,<br>Saloni! 💕</h1>
   <p>Tu hamesha aise hi muskurati rahe,<br>chamakti rahe, aur meri life mein bani rahe. 🌷</p>
   <div class="meter"><div>Saloni ka Specialness Meter 📊</div><div class="bar"><i id="fill"></i></div><div class="mv" id="mv">0%</div></div>
-  <form name="jawab" id="jf" method="POST" data-netlify="true" style="margin-top:20px">
-   <input type="hidden" name="form-name" value="jawab">
-   <div class="tx" style="font-size:20px;font-weight:700;color:var(--rose)">Hmm, ab batao, kaisa laga mera birthday surprise aapko? 🎁</div>
-   <textarea id="ans" name="jawab" rows="4" maxlength="800" placeholder="Yahan apna jawab likho... 💬"></textarea>
-   <button type="submit">Pankaj ko bhejo 💌</button>
-   <div id="thx" style="display:none;margin-top:12px"><div id="thm" style="font-size:18px;color:var(--ink)"></div><a class="lnk" id="wa" target="_blank" rel="noopener">💬 WhatsApp pe bhi bhejo</a></div>
-  </form>
   <div class="card" style="min-height:0">
    <div class="tx">Tu sirf meri dost nahi, meri life ka sabse best part hai. 🤍<br>Aaj ka din tere naam, aur tere har sapne ke naam! 🌟</div>
    <div class="sign">With love ❤️<br>from Pankaj Kumar</div>
@@ -373,10 +375,17 @@ let mc=[],fl=[],mvs=0,mt=0,lk=false;
 function initMem(){const E=['🎂','💖','🎁','🎈','🦋','✈️'];mc=[...E,...E].sort(()=>Math.random()-.5);fl=[];mvs=0;mt=0;lk=false;$('mv2').textContent='Moves: 0';const g=$('mg');g.innerHTML='';mc.forEach((e,k)=>{const b=document.createElement('button');b.className='mc';b.textContent='❓';b.setAttribute('aria-label','Card');b.onclick=()=>flip(b,k);g.appendChild(b)});$('b13').style.display='none'}
 function flip(b,k){if(lk||b.classList.contains('up'))return;b.classList.add('up');b.textContent=mc[k];tone(520+k*20,0,.1,'sine');fl.push([b,k]);if(fl.length===2){mvs++;$('mv2').textContent='Moves: '+mvs;const [a,c]=fl;if(mc[a[1]]===mc[c[1]]){mt++;fl=[];boom(20);if(mt===6){$('mv2').textContent='Waah! '+mvs+' moves mein jeet gayi! 🏆';boom(150);$('b13').style.display='inline-block'}}else{lk=true;setTimeout(()=>{[a,c].forEach(x=>{x[0].classList.remove('up');x[0].textContent='❓'});fl=[];lk=false},800)}}}
 $('b13').onclick=()=>show(8);
-// answer form
-$('jf').onsubmit=async e=>{e.preventDefault();const v=$('ans').value.trim();if(!v){toast('Kuch to likho na 🥺');return}
- let ok=false;try{const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({'form-name':'jawab',jawab:v}).toString()});ok=r.ok}catch(x){}
- $('thm').textContent=ok?'Tumhara jawab Pankaj tak pahunch gaya! 🥰':'Neeche WhatsApp button se Pankaj ko bhej do 👇';$('wa').href='https://wa.me/917488572186?text='+encodeURIComponent('Birthday surprise kaisa laga? 🎁\n\n'+v);$('thx').style.display='block';boom(100)};
+// shayari
+const SH=[
+['Shayari 1 💖',['Tumhe mil jayega mujhse behtar 🌟','Mujhe mil jaayegi tumse behtar ✨','Ki tumhe mil jayega mujhse behtar 💫','Mujhe mil jaayegi tumse behtar 🌙','Lekin agar tum aur main HAM ho jaaye 🤝','To kuch nahi hai isse behtar 💖']],
+['Shayari 2 📖',['If life is a book 📖','Then your eyes are the best topic of my book 👀','Your smile is the best page of my book 😊','Your face is the best summary of my book 🌸','In short, you’re the best chapter of my book 💖']],
+['Shayari 3 🌸',['Chaand-taare sab the, par kuch kami thi 🌙','Jab tu dost bankar aayi, zindagi poori lagi 🌸','Ab koi bhi mushkil aaye, darr nahi lagta 💪','Kyunki meri dost tu hai, meri himmat bhi tu hai 🤝']],
+['Shayari 4 ⭐',['Not every star shines in the sky ⭐','Some walk on earth with the brightest smile 😊','Happy Birthday to the one who makes ordinary days feel like magic ✨🎂']]];
+let sh=0;
+function showSh(){const [t,L]=SH[sh];const c=$('shc');c.innerHTML='<h2>'+t+'</h2>'+L.map(l=>'<p>'+l+'</p>').join('');c.style.animation='none';void c.offsetWidth;c.style.animation='pop .6s';
+ $('shd').textContent=SH.map((_,j)=>j<=sh?'💗':'🤍').join('');$('b14').textContent=sh===SH.length-1?'Last surprise 🎁':'Agli shayari 📜'}
+function initShy(){sh=0;showSh()}
+$('b14').onclick=()=>{if(sh<SH.length-1){sh++;showSh();tone(600+sh*80,0,.15,'sine');boom(30)}else{show(3);boom(260);setTimeout(()=>boom(160),700);meter()}};
 // dil ki baat
 let dl=0;
 function initDil(){dl=0;$('L1').classList.add('on');$('L2').classList.remove('on');$('b10').textContent='Agli baat padho 💌'}
@@ -388,7 +397,7 @@ function loadS(){if(au)au.pause();au=new Audio(SG[SGL[sk][0]]);au.onended=()=>{$
 function initSong(){sk=0;loadS()}
 $('bp9').onclick=()=>{if(!au)return;if(au.paused){au.play().catch(()=>{});$('vn').classList.add('spin');$('bp9').textContent='⏸️ Pause'}else{au.pause();$('vn').classList.remove('spin');$('bp9').textContent='▶️ Play'}};
 $('bn9').onclick=()=>{sk=(sk+1)%SGL.length;loadS()};
-$('b9').onclick=()=>{if(au)au.pause();show(3);boom(260);setTimeout(()=>boom(160),700);meter()};
+$('b9').onclick=()=>{if(au)au.pause();show(14);initShy()};
 // toast + easter egg
 function toast(t){const e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(toast.t);toast.t=setTimeout(()=>e.style.display='none',5000)}
 let nc=0;$('nm').onclick=()=>{if(++nc===5){nc=0;boom(120);toast('🤫 Secret unlock! Tune 5 baar tap kiya, matlab curiosity ka keeda tujhme bhi hai. Tere jaisa koi nahi, Saloni! 💖')}};
