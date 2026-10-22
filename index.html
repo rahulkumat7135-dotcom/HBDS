@@ -379,8 +379,9 @@ $('b13').onclick=()=>show(8);
 const SH=[
 ['Shayari 1 💖',['Tumhe mil jayega mujhse behtar 🌟','Mujhe mil jaayegi tumse behtar ✨','Ki tumhe mil jayega mujhse behtar 💫','Mujhe mil jaayegi tumse behtar 🌙','Lekin agar tum aur main HAM ho jaaye 🤝','To kuch nahi hai isse behtar 💖']],
 ['Shayari 2 📖',['If life is a book 📖','Then your eyes are the best topic of my book 👀','Your smile is the best page of my book 😊','Your face is the best summary of my book 🌸','In short, you’re the best chapter of my book 💖']],
-['Shayari 3 🌸',['Chaand-taare sab the, par kuch kami thi 🌙','Jab tu dost bankar aayi, zindagi poori lagi 🌸','Ab koi bhi mushkil aaye, darr nahi lagta 💪','Kyunki meri dost tu hai, meri himmat bhi tu hai 🤝']],
-['Shayari 4 ⭐',['Not every star shines in the sky ⭐','Some walk on earth with the brightest smile 😊','Happy Birthday to the one who makes ordinary days feel like magic ✨🎂']]];
+['Shayari 3 🥀',['Ki har koi mera ho jaaye, aise meri taqdeer nahi 💔','Main woh sheesha hu jiski koi tasveer nahi 💫','Dard se rishta hai mera, khushiyan mujhe naseeb nahi 🥀','Aur mujhe bhi koi yaad kare, main itna bhi khushnaseeb nahi 🌙']],
+['Shayari 4 🌸',['Chaand-taare sab the, par kuch kami thi 🌙','Jab tu dost bankar aayi, zindagi poori lagi 🌸','Ab koi bhi mushkil aaye, darr nahi lagta 💪','Kyunki meri dost tu hai, meri himmat bhi tu hai 🤝']],
+['Shayari 5 ⭐',['Not every star shines in the sky ⭐','Some walk on earth with the brightest smile 😊','Happy Birthday to the one who makes ordinary days feel like magic ✨🎂']]];
 let sh=0;
 function showSh(){const [t,L]=SH[sh];const c=$('shc');c.innerHTML='<h2>'+t+'</h2>'+L.map(l=>'<p>'+l+'</p>').join('');c.style.animation='none';void c.offsetWidth;c.style.animation='pop .6s';
  $('shd').textContent=SH.map((_,j)=>j<=sh?'💗':'🤍').join('');$('b14').textContent=sh===SH.length-1?'Last surprise 🎁':'Agli shayari 📜'}
